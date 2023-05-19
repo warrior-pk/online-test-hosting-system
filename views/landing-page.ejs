@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="landing-page.css" />
+    <script src="landing-page.js" defer></script>
+    <title>Orange</title>
+</head>
+
+<body>
+    <div class="main-box">
+        <div id="sidebar-div">
+            <div id="mySidebar" class="sidebar">
+                <button class="closebtn" onclick="closeNav()">&times;</button>
+                <a href="#">Home</a>
+                <a href="#first">About</a>
+                <a href="#test-section">How it works</a>
+                <a href="#questions">FAQ</a>
+                <a href="#contributors">Contact</a>
+            </div>
+        </div>
+        <div class="sidetext position-fixed">
+            Online Examination System
+        </div>
+        <div id="main">
+            <button class="openbtn position-fixed" id="navbar-open-btn" onclick="openNav()">☰</button>
+        </div>
+    </div>
+    <div id="main-content-wrapper">
+        <section class="text-light text-center text-sm-start" id="main-section">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div id="header-content">
+                        <h1>
+                            <div class="head text-dark m-4" id="first">Become a TOPPER
+                        </h1>
+                        <p class="lead m-4 text-dark">
+                            We are focusing on our students the fundamentals of the latest
+                            and greatest technologies to prepare them for their future.
+                        </p>
+                    </div>
+                    <img class="img-fluid d-none d-sm-block p-2 m-4" id="photo" src="img/showcase-2.webp" alt="" />
+                </div>
+            </div>
+        </section>
+        <section class="p-5 mt-md-5" id="test-section">
+            <div class="container">
+                <div class="d-md-flex justify-content-between align-items-center" style="color: #262c35;">
+                    <div class="container">
+                        <div class="row m-lg-5 pb-lg-5">
+                            <img class="col card shadow test-image1 me-lg-5" src="img/studentexam.jpg"
+                                alt="make a test" />
+                            <p class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                                cupiditate voluptates
+                                commodi vel, enim corporis beatae sed sit nesciunt aliquid reiciendis quo provident?
+                                Atque,
+                                dolorum porro voluptas autem possimus quae.
+                                <form action="/all-tests" method="get">
+                                    <button onclick="" type="submit" id="test-1" class="btn btn-lg shadow card mt-lg-4 test-btn">
+                                        Take a test
+                                    </button>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="row m-lg-5 pt-lg-5">
+                            <p class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                                cupiditate voluptates
+                                commodi vel, enim corporis beatae sed sit nesciunt aliquid reiciendis quo provident?
+                                Atque,
+                                dolorum porro voluptas autem possimus quae.
+                                <form action="/create-test" method="get">
+                                    <button id="test-2" class="btn btn-lg shadow card mt-lg-4 test-btn">
+                                    Make a test
+                                    </button>
+                                </form>
+                            </p>
+                            <img class="col card shadow test-image2 ms-lg-5" src="img/teacherexam.jpg"
+                                alt="make a test" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Accordion -->
+        <section id="questions" class="p-3 mt-lg-4">
+            <div class="container">
+                <h2 class="text-center text-dark mb-4">Frequently Asked Questions</h2>
+                <div class="accordion accordion-flush" id="questions-div">
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header ">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#question-one">
+                                How much does it cost for One Exam?
+                            </button>
+                        </h2>
+                        <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">You have to pay ₹50/Exam.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#question-two">
+                                How will a candidate answer a question in Examination?
+                            </button>
+                        </h2>
+                        <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                There will be a panel on computer screen showing all the
+                                question nos in different colour scheme which will indicate
+                                which are the questions answered, left unanswered and marked for
+                                review.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#question-three">
+                                Can a candidate change his/her answer?
+                            </button>
+                        </h2>
+                        <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                Yes, during the exam time candidate can change his/her answer.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#question-four">
+                                What if the internet connection breaks while taking the exam?
+                            </button>
+                        </h2>
+                        <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                You have to login to your account and the test will
+                                automatically start from where it stopped.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#question-five">
+                                When will be the result of this Examination be declared?
+                            </button>
+                        </h2>
+                        <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+                            <div class="accordion-body">
+                                The result will be display in your profile after completion of
+                                your exam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contributors" class="p-5 m-lg-5">
+            <div class="container">
+                <h2 class="text-center text-dark">Our Contributors</h2>
+                <p class="lead text-center text-dark">
+                    Our Contributors have 5+ years working as a web developer in the
+                    industry
+                </p>
+                <div class="row g-4 m-5">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="contributors-card card text-light" style="background-color:#352126;">
+                            <div class="card-body text-center p-2">
+                                <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-2"
+                                    alt="" />
+                                <h3 class="card-title">Piyush</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda accusamus nobis.
+                                </p>
+                                <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-linkedin text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="contributors-card card text-light" style="background-color: #352126;">
+                            <div class="card-body text-center p-2">
+                                <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-circle mb-2"
+                                    alt="" />
+                                <h3 class="card-title">Raunak</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda accusamus nobis.
+                                </p>
+                                <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-linkedin text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-instagram text-light mx-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="contributors-card card text-light" style="background-color: #352126;">
+                            <div class="card-body text-center p-2">
+                                <img src="https://randomuser.me/api/portraits/men/12.jpg" class="rounded-circle mb-2"
+                                    alt="" />
+                                <h3 class="card-title">Nikhil</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda accusamus nobis.
+                                </p>
+                                <a href="https://twitter.com/nikgautamtweets" target="_blank"><i
+                                        class="bi bi-twitter text-light mx-1"></i></a>
+                                <a href="https://www.facebook.com/nikgautamig" target="_blank"><i
+                                        class="bi bi-facebook text-light mx-1"></i></a>
+                                <a href="https://www.linkedin.com/in/nikgautam/" target="_blank"><i
+                                        class="bi bi-linkedin text-light mx-1"></i></a>
+                                <a href="https://www.instagram.com/nikgautamig/" target="_blank"><i
+                                        class="bi bi-instagram text-light mx-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="contributors-card card text-light" style="background-color: #352126;">
+                            <div class="card-body text-center p-2">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle mb-2"
+                                    alt="" />
+                                <h3 class="card-title">Vandita</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda accusamus nobis.
+                                </p>
+                                <a href="#"><i class="bi bi-twitter text-light mx-1"></i></a>
+                                <a href="#"><i class="bi bi-facebook text-light mx-1"></i></a>
+                                <a href="https://bit.ly/3IfBOpE" target="_blank"><i
+                                        class="bi bi-linkedin text-light mx-1"></i></a>
+                                <a href="https://bit.ly/3YI2x3x" target="_blank"><i
+                                        class="bi bi-instagram text-light mx-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="contributors-card card text-light" style="background-color: #352126;">
+                            <div class="card-body text-center p-2">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle mb-2"
+                                    alt="" />
+                                <h3 class="card-title">Shruti</h3>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda accusamus nobis.
+                                </p>
+                                <a href="https://twitter.com/Shrutiswift" target="_blank"><i
+                                        class="bi bi-twitter text-light mx-1"></i></a>
+                                <a href="https://bit.ly/3HRDnZv" target="_blank"><i
+                                        class="bi bi-facebook text-light mx-1"></i></a>
+                                <a href="https://www.linkedin.com/in/shruti-sharma-ab3788201/" target="_blank"><i
+                                        class="bi bi-linkedin text-light mx-1"></i></a>
+                                <a href="https://www.instagram.com/shrutiswift/" target="_blank"><i
+                                        class="bi bi-instagram text-light mx-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="p-4 text-white text-center position-relative mt-lg-5">
+            <div class="container d-inline-block">
+                <p class="h8 mb-0">&copy; Copyright Orange Ltd.</p>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
