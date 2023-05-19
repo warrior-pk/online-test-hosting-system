@@ -15,7 +15,7 @@
             <h1>Live Test</h1>
             <div id="timer" class="mb-3"></div>
             <div class="align-top">
-                <button type="submit" class="btn btn-danger mt-3 ml-3">Submit</button>
+                <button id="Xsubmit-btn" type="submit" class="btn btn-danger mt-3 ml-3">Submit</button>
             </div>
         </div>
     </nav>
@@ -47,66 +47,53 @@
     </div>
 
     <script>
-        // JavaScript code to handle next question button, timer, and submission
         $(document).ready(function() {
             var currentQuestion = 0;
             var totalQuestions = <%= questions.length %>;
-            var startTime = new Date().getTime(); // Start time in milliseconds
-            var timeLimit = 600; // Total time limit in seconds
+            var startTime = new Date().getTime(); 
+            var timeLimit = 600; 
 
-            // Function to update the timer display
             function updateTimer() {
-                var currentTime = new Date().getTime(); // Current time in milliseconds
-                var elapsedSeconds = Math.floor((currentTime - startTime) / 1000); // Elapsed time in seconds
-                var remainingSeconds = timeLimit - elapsedSeconds; // Remaining time in seconds
+                var currentTime = new Date().getTime(); 
+                var elapsedSeconds = Math.floor((currentTime - startTime) / 1000); 
+                var remainingSeconds = timeLimit - elapsedSeconds;
 
-                // Display remaining time
+
                 var minutes = Math.floor(remainingSeconds / 60);
                 var seconds = remainingSeconds % 60;
                 var timerText = minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
                 $('#timer').text(timerText);
 
-                // Check if time is up
                 if (remainingSeconds <= 0) {
-                    // Time's up, submit the form
                     $('#examForm').submit();
                 }
             }
 
-            // Call the updateTimer function initially
             updateTimer();
 
-            // Call the updateTimer function every second
             setInterval(updateTimer, 1000);
 
-            $('#nextQuestionBtn').click(function() {
-                if (currentQuestion < totalQuestions - 1) {
-                    $('input[name="question' + currentQuestion + '"]').each(function() {
-                        if ($(this).is(':checked')) {
-                            // Save the selected answer for current question
-                            var answer = $(this).val();
-                            // Perform any necessary operations with the answer
-                            console.log('Selected answer for question ' + currentQuestion + ': ' + answer);
-                        }
-                    });
+            // $('#nextQuestionBtn').click(function() {
+            //     if (currentQuestion < totalQuestions - 1) {
+            //         $('input[name="question' + currentQuestion + '"]').each(function() {
+            //             if ($(this).is(':checked')) {
+            //                 var answer = $(this).val();
+            //                 console.log('Selected answer for question ' + currentQuestion + ': ' + answer);
+            //             }
+            //         });
 
-                    // Move to the next question
-                    currentQuestion++;
-                    $('.card').hide();
-                    $('.card:eq(' + currentQuestion + ')').show();
-                } else {
-                    // Last question, submit the form
-                    $('#examForm').submit();
-                }
-            });
+            //         currentQuestion++;
+            //         $('.card').hide();
+            //         $('.card:eq(' + currentQuestion + ')').show();
+            //     } else {
+            //         $('#examForm').submit();
+            //     }
+            // });
 
-            // Handle form submission
-            $('#examForm').submit(function(e) {
-                e.preventDefault();
-                // Perform any necessary operations before ending the test
-
+            $('#Xsubmit-btn').click(function(e) {
+                // e.preventDefault();
                 console.log('Test ended');
-                // You can redirect to another page or display a message indicating the test has ended
+                $('#examForm').submit();
                 window.close();
             });
         });

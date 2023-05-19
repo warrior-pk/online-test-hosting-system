@@ -4,7 +4,7 @@ async function getHomePage(req,res){
 }
 
 async function getCreateTestPage(req,res){
-   return res.render('make-test.ejs')
+   return res.render('make-test.ejs', {mergedArray : []})
 }
 
 async function getAllTestsPage(req,res){
