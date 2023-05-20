@@ -56,12 +56,12 @@ router
         try {
             const questions = await Question.find({ author, subject });
         
-            // const newTest = new Test({
-            //     author,
-            //     subject,
-            //     questions: questions.map(question => question._id)
-            // });
-            // const savedTest = await newTest.save();
+            const newTest = new Test({
+                author,
+                subject,
+                questions: questions.map(question => question._id)
+            });
+            const savedTest = await newTest.save();
         
             return res.redirect('/all-tests');
         } catch (err) {
@@ -89,7 +89,10 @@ router
         );
         console.log(JSON.stringify(res.body),"res.body");
     })
-    
+    .get('/result-view', async (req, res) => { res.render('result-view', {data: ""})})
+    .get('*', async (req, res) => {
+        res.render('404')
+    })
 
 
 module.exports = router
